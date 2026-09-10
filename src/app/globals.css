@@ -115,6 +115,13 @@ html[data-js] [data-reveal="in"] {
     transform 280ms var(--ease-out-quint) var(--reveal-delay, 0ms);
 }
 
+/* Whatever the page scrolled past, or restored under the visitor, is simply
+   there. Its entrance has already been missed, so playing one would only draw
+   attention to the fact. */
+html[data-js] [data-reveal-instant] {
+  transition: none !important;
+}
+
 /* Words in the positioning statement resolve in sequence rather than rising. */
 html[data-js] [data-reveal-word] {
   opacity: 0.2;
