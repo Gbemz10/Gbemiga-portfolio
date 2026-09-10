@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens. One palette, one accent, one radius scale, locked site-wide.
+   The page is paper white, the type is near-black rather than pure black, and
+   the single accent is a signal orange used only for state: focus, hover, the
+   active stage, "available".
+--------------------------------------------------------------------------- */
+@theme {
+  --color-paper: #ffffff;
+  --color-surface: #f6f5f2;
+  --color-ink: #0b0b0c;
+  --color-mute: #5f646a;
+  --color-faint: #6b7075;
+  --color-accent: #e63f12;
+  --color-line: #e3e1dc;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --radius-card: 14px;
+
+  /* Motion. Every duration is under 300ms except the one-time hero entrance,
+     and every curve is an out-curve, so movement is fastest at the moment the
+     eye arrives. */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --dur-fast: 140ms;
+  --dur-base: 200ms;
+  --dur-slow: 280ms;
+}
+
+html {
+  background: var(--color-paper);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Lenis keeps its own scroll position; without this the page double-scrolls. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+/* Hairlines carry the structure, so the page is grouped by rules and space
+   rather than by cards stacked on cards. */
+.rule {
+  border-top: 1px solid var(--color-line);
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+/* Motion is gentled, not removed: opacity and colour survive, movement stops. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reveals.
+
+   All of the entrance motion is CSS, and all of it is gated behind a data
+   attribute the document carries. Two consequences worth stating, because they
+   are the reason this isn't written in JavaScript:
+
+   1. With scripting off the <noscript> block cancels the gate, so nothing is
+      ever hidden. The page is readable as plain HTML.
+   2. Transform and opacity animations are handed to the compositor, so they
+      still complete in a background tab, where requestAnimationFrame is
+      throttled to a stop. A JS-driven entrance leaves a blank page there.
+--------------------------------------------------------------------------- */
+html[data-js] [data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+html[data-js] [data-reveal="in"] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 280ms var(--ease-out-quint) var(--reveal-delay, 0ms),
+    transform 280ms var(--ease-out-quint) var(--reveal-delay, 0ms);
+}
+
+/* Words in the positioning statement resolve in sequence rather than rising. */
+html[data-js] [data-reveal-word] {
+  opacity: 0.2;
+}
+
+html[data-js] [data-reveal-word="in"] {
+  opacity: 1;
+  transition: opacity 340ms var(--ease-out-quart) var(--reveal-delay, 0ms);
+}
+
+/* The headline: each line rises out of its own overflow-hidden box. Slower
+   than the 300ms ceiling on purpose, because it happens once, before anything
+   is interactive, and it is a first impression rather than a response. */
+@keyframes line-rise {
+  from {
+    transform: translateY(108%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+html[data-js] [data-line] {
+  animation: line-rise 620ms var(--ease-out-quint) var(--line-delay, 0ms) both;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+html[data-js] [data-fade] {
+  animation: fade-in 400ms var(--ease-out-quart) var(--fade-delay, 0ms) both;
+}
