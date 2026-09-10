@@ -11,7 +11,6 @@ export type Project = {
   /** Four beats every case study answers. Any of them may be omitted. */
   problem?: string;
   built?: string;
-  challenge?: string;
   result?: string;
   stack: string[];
   highlights: string[];

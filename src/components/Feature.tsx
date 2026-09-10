@@ -27,7 +27,6 @@ export function Feature({ project }: { project: Project }) {
   const beats = [
     { label: "The problem", body: project.problem },
     { label: "What I built", body: project.built },
-    { label: "Technical challenge", body: project.challenge },
     { label: "Result", body: project.result },
   ].filter((b) => b.body);
 
