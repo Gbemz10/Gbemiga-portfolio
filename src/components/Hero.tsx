@@ -21,7 +21,7 @@ export function Hero() {
 
       <FadeIn delay={0.55}>
         <div className="flex flex-col gap-6 border-t border-line pt-6 md:flex-row md:items-end md:justify-between">
-          <p className="max-w-md text-[15px] leading-relaxed text-mute">
+          <p className="max-w-xl text-[15px] leading-relaxed text-mute">
             <span className="text-ink">{profile.role}</span>
             <span className="text-faint"> · </span>
             {profile.stackLine.join(" · ")}

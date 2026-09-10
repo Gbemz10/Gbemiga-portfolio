@@ -3,7 +3,7 @@ export const profile = {
   shortName: "Gbemiga Shoga",
   headline: ["I build", "digital", "experiences."],
   role: "Fullstack Engineer",
-  stackLine: ["React", "TypeScript", "Flutter", "Motion"],
+  stackLine: ["React", "TypeScript", "Node.js", "PostgreSQL", "Flutter"],
   positioning: "I turn ideas into interfaces people actually enjoy using.",
   positioningSub:
     "From architecture and state management to interaction, animation and visual polish.",
