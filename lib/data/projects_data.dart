@@ -6,6 +6,62 @@ import 'project.dart';
 /// projects without touching any UI code.
 final List<Project> projects = [
   const Project(
+    name: 'Recur',
+    status: 'Completed',
+    flagship: true,
+    icon: Icons.autorenew_rounded,
+    accent: AppColors.primary,
+    tagline: 'Finds the subscriptions hiding in your bank statement.',
+    description:
+        'Nigerians lose money to charges they have forgotten about: a data plan '
+        'that renews itself, a streaming trial that quietly converted, a plan '
+        'whose price went up without a word. Recur links read-only to a bank '
+        'through Mono, reads the statement, works out which debits repeat, and '
+        'warns before the next one lands. It never holds or moves money.',
+    techStack: [
+      'Flutter',
+      'TypeScript',
+      'Fastify',
+      'Drizzle ORM',
+      'PostgreSQL',
+      'Mono Open Banking',
+      'Resend',
+    ],
+    highlights: [
+      'Detection engine groups debits by merchant and narration, clusters them by '
+          'amount, and classifies cadence into weekly through yearly bands',
+      'Chains amount clusters over time, so a plan price change updates the same '
+          'subscription instead of creating a duplicate one',
+      'Flags a possible trial from a single debit for merchants known to run them, '
+          'rather than waiting for a second charge that costs the user money',
+      'Bank credentials are never seen by the app: Mono hosts the connect flow and '
+          'the link is confirmed by webhook',
+      'Short-lived access tokens with rotating refresh tokens, and a sign-in '
+          'notification keyed to the device rather than the IP',
+      'Email reminders before a charge, a weekly digest, and per-channel '
+          'unsubscribe with a signed token',
+    ],
+    links: [
+      ProjectLink(label: 'View on GitHub', url: 'https://github.com/Gbemz10/Recur'),
+    ],
+    screenshotLabels: [
+      'Home',
+      'Recurring',
+      'Spending',
+      'Trials',
+      'Onboarding',
+      'Sign up',
+    ],
+    screenshotAssets: [
+      'assets/screenshots/recur/home.png',
+      'assets/screenshots/recur/recurring.png',
+      'assets/screenshots/recur/spending.png',
+      'assets/screenshots/recur/trials.png',
+      'assets/screenshots/recur/onboarding-1.png',
+      'assets/screenshots/recur/auth.png',
+    ],
+  ),
+  const Project(
     name: 'NairaT',
     status: 'Capstone, completed & defended',
     flagship: true,
