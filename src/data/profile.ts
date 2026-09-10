@@ -7,7 +7,7 @@ export const profile = {
   positioning: "I turn ideas into interfaces people actually enjoy using.",
   positioningSub:
     "From architecture and state management to interaction, animation and visual polish.",
-  availability: "Open to frontend engineering opportunities",
+  availability: "Open to full stack engineering",
   email: "shogagbemiga@gmail.com",
   phone: "0706 349 100",
   github: "https://github.com/Gbemz10",
