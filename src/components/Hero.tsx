@@ -31,7 +31,7 @@ export function Hero() {
             className="mono-label group inline-flex items-center gap-2 transition-colors duration-[140ms] hover:!text-ink"
           >
             Scroll to explore
-            <span className="inline-block transition-transform duration-[200ms] group-hover:translate-y-[2px]">
+            <span className="inline-block transition-[translate] duration-[200ms] group-hover:translate-y-[2px]">
               ↓
             </span>
           </a>

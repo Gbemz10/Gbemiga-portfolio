@@ -43,7 +43,7 @@ export function Contact() {
                 <span className="truncate">{c.value}</span>
                 <span
                   aria-hidden
-                  className="shrink-0 text-mute transition-[transform,color] duration-[200ms] ease-[var(--ease-out-quart)] group-hover:translate-x-1 group-hover:text-accent"
+                  className="shrink-0 text-mute transition-[translate,color] duration-[200ms] ease-[var(--ease-out-quart)] group-hover:translate-x-1 group-hover:text-accent"
                 >
                   →
                 </span>
@@ -53,10 +53,6 @@ export function Contact() {
         ))}
       </ul>
 
-      <footer className="rule mt-20 flex flex-col gap-2 pt-6 text-[12px] text-faint md:flex-row md:items-center md:justify-between">
-        <p>© {new Date().getFullYear()} {profile.name}</p>
-        <p>Built with Next.js, TypeScript, Tailwind, Motion and Lenis.</p>
-      </footer>
     </section>
   );
 }

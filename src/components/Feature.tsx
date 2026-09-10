@@ -70,10 +70,10 @@ export function Feature({ project }: { project: Project }) {
           <div className="mt-9 flex flex-wrap items-center gap-6">
             <Link
               href={`/work/${project.slug}`}
-              className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-[13px] font-medium text-paper transition-transform duration-[140ms] ease-[var(--ease-out-quart)] active:scale-[0.98]"
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-[13px] font-medium text-paper transition-[scale] duration-[140ms] ease-[var(--ease-out-quart)] active:scale-[0.98]"
             >
               Case study
-              <span className="transition-transform duration-[200ms] ease-[var(--ease-out-quart)] group-hover:translate-x-1">
+              <span className="transition-[translate] duration-[200ms] ease-[var(--ease-out-quart)] group-hover:translate-x-1">
                 →
               </span>
             </Link>

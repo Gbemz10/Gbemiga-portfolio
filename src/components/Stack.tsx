@@ -72,7 +72,7 @@ function Card({ item }: { item: StackItem }) {
         <p className="absolute inset-0 text-[13px] leading-relaxed text-faint opacity-100 transition-opacity duration-[200ms] group-hover:opacity-0 group-focus-visible:opacity-0">
           {item.seenIn}
         </p>
-        <ul className="absolute inset-0 translate-y-[6px] opacity-0 transition-[opacity,transform] duration-[200ms] group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
+        <ul className="absolute inset-0 translate-y-[6px] opacity-0 transition-[opacity,translate] duration-[200ms] group-hover:translate-y-0 group-hover:opacity-100 group-focus-visible:translate-y-0 group-focus-visible:opacity-100">
           {item.detail.map((d) => (
             <li key={d} className="text-[13px] leading-[1.55] text-mute">
               {d}

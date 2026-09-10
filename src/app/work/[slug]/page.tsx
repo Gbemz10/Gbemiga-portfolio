@@ -162,13 +162,13 @@ export default async function CaseStudy({
       >
         <span>
           <span className="mono-label">Next project</span>
-          <span className="mt-2 block text-[clamp(2rem,6vw,4rem)] font-medium leading-none tracking-[-0.04em] transition-transform duration-[200ms] ease-[var(--ease-out-quart)] group-hover:translate-x-2">
+          <span className="mt-2 block text-[clamp(2rem,6vw,4rem)] font-medium leading-none tracking-[-0.04em] transition-[translate] duration-[200ms] ease-[var(--ease-out-quart)] group-hover:translate-x-2">
             {next.name}
           </span>
         </span>
         <span
           aria-hidden
-          className="text-[clamp(1.5rem,4vw,2.5rem)] text-mute transition-[transform,color] duration-[200ms] ease-[var(--ease-out-quart)] group-hover:translate-x-2 group-hover:text-accent"
+          className="text-[clamp(1.5rem,4vw,2.5rem)] text-mute transition-[translate,color] duration-[200ms] ease-[var(--ease-out-quart)] group-hover:translate-x-2 group-hover:text-accent"
         >
           →
         </span>
