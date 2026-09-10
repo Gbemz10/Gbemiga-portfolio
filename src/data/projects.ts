@@ -34,8 +34,7 @@ export const projects: Project[] = [
       "Nigerians lose money to charges they have forgotten about: a data plan that renews itself, a streaming trial that quietly converted, a plan whose price went up without a word.",
     built:
       "A read-only bank link through Mono, a detection engine that reads the statement and works out which debits repeat, and a warning before the next one lands. Recur never holds or moves money.",
-    challenge:
-      "Deciding that two debits months apart are the same subscription. The engine groups by merchant and narration, clusters those by amount, and classifies the gap between them into weekly-through-yearly bands, then chains the amount clusters over time, so a price rise updates the subscription you already have instead of inventing a second one.",
+
     result:
       "Built end to end and covered by 52 tests: detection, trials, spending analysis, renewal reminders, a weekly digest, and per-channel unsubscribe behind a signed token.",
     stack: [
@@ -78,8 +77,6 @@ export const projects: Project[] = [
       "Micro-payments are the hardest kind to move: the fee and the friction routinely cost more than the payment itself, and closed-loop alternatives rarely get evaluated properly before they are called finished.",
     built:
       "A closed-loop ERC-20 tokenized micro-payment platform, taken all the way from architecture through formal security and usability evaluation.",
-    challenge:
-      "Proving it rather than claiming it. Eight security test cases (authentication, IDOR, input validation, transaction integrity, and smart-contract access control) were written and run against the deployed system.",
     result:
       "Defended as my final-year capstone. A formal PSSUQ v3 usability evaluation across 11 participants averaged 5.81/7, with on-chain settlement through a custom ERC-20 contract on Ethereum Sepolia.",
     stack: [
@@ -109,8 +106,6 @@ export const projects: Project[] = [
       "Someone always fronts the money for the trip, the rent or the group order, and then spends a week chasing it. The apps built for this are wired to foreign payment rails.",
     built:
       "A bill-splitting app for groups, trips, shared rent and group orders, settled through Paystack instead of bolting on a gateway from somewhere else.",
-    challenge:
-      "The backend never trusts the client with money math. Every split, whether equal, percentage, custom or itemized, is calculated server-side, and a settlement is only recorded off an HMAC-signature-verified, idempotent webhook.",
     result:
       "Live. A greedy debt-simplification pass nets every balance down to the fewest possible payments, and the money logic (netting, split math, signature verification) is unit-tested.",
     stack: [
@@ -146,8 +141,6 @@ export const projects: Project[] = [
       "A market seller's phone won't always have signal, and nearly every bookkeeping app assumes a cloud account, an OTP and a payment gateway before it will record a single sale.",
     built:
       "A bookkeeping app for solo traders and small businesses where everything runs on-device: sales, expenses, reports, and branded PDF invoices, with no server in the loop.",
-    challenge:
-      "One PIN covering several businesses with ledgers that never mix, and generating a branded PDF invoice on the phone itself so it can be shared the moment a sale closes.",
     result:
       "In daily use tracking real sales, with CSV and styled Excel export for handoff to an accountant.",
     stack: ["Flutter", "SQLite (sqflite)", "On-device PDF generation"],
@@ -176,8 +169,6 @@ export const projects: Project[] = [
       "Two people often need exactly what the other can do, and neither has the cash for it. Cutting the grass for guitar lessons is a trade that no marketplace is set up to broker.",
     built:
       "A peer-to-peer skill-swap marketplace built end to end: browsing and listings, a matching and swap-request flow, in-app chat, notifications, and post-swap reviews.",
-    challenge:
-      "Keeping both sides of a swap in step. A request, a match, a conversation, a completion and a review are all states two strangers have to agree on, and listings stay location-aware so a trade is actually practical.",
     result:
       "A personal prototype for now: the backend runs locally and hasn't been through a hardening pass for real users yet.",
     stack: ["Flutter", "FastAPI", "Python", "SQLAlchemy", "SQLite"],
