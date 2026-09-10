@@ -17,9 +17,11 @@ export function Stack() {
 
       <ul className="mt-10 grid grid-cols-1 gap-px bg-line sm:grid-cols-2 lg:grid-cols-3">
         {stack.map((item, i) => (
-          <Reveal as="li" key={item.name} delay={Math.min(i, 5) * 0.04}>
-            <Card item={item} />
-          </Reveal>
+          <li key={item.name} className="bg-paper">
+            <Reveal delay={Math.min(i, 5) * 0.04}>
+              <Card item={item} />
+            </Reveal>
+          </li>
         ))}
       </ul>
 

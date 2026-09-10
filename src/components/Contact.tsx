@@ -31,7 +31,8 @@ export function Contact() {
 
       <ul className="mt-16 grid grid-cols-1 gap-px bg-line sm:grid-cols-2 lg:grid-cols-4 md:mt-24">
         {channels.map((c, i) => (
-          <Reveal as="li" key={c.label} delay={Math.min(i, 4) * 0.04}>
+          <li key={c.label} className="bg-paper">
+            <Reveal delay={Math.min(i, 4) * 0.04} className="h-full">
             <a
               href={c.href}
               target={c.href.startsWith("http") ? "_blank" : undefined}
@@ -49,7 +50,8 @@ export function Contact() {
                 </span>
               </span>
             </a>
-          </Reveal>
+            </Reveal>
+          </li>
         ))}
       </ul>
 
