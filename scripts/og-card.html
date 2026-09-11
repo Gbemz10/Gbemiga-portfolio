@@ -1,0 +1,40 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width:1200px; height:630px; background:#ffffff; color:#0b0b0c;
+    font-family:'Geist',system-ui,sans-serif;
+    padding:64px 72px; display:flex; flex-direction:column; justify-content:space-between;
+  }
+  .label { font-family:'Geist Mono',monospace; font-size:15px; letter-spacing:.14em;
+           text-transform:uppercase; color:#6b7075; }
+  .row { display:flex; justify-content:space-between; align-items:baseline; }
+  h1 { font-size:118px; line-height:.88; letter-spacing:-.045em; font-weight:500;
+       text-transform:uppercase; }
+  .meta { display:flex; justify-content:space-between; align-items:center;
+          border-top:1px solid #e3e1dc; padding-top:22px; font-size:21px; color:#5f646a; }
+  .meta strong { color:#0b0b0c; font-weight:500; }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%;
+         background:#e63f12; margin-right:10px; vertical-align:middle; }
+</style></head>
+<body>
+  <div class="row">
+    <span class="label">Oluwagbemiga Shoga</span>
+    <span class="label">Lagos, Nigeria</span>
+  </div>
+  <h1>I build<br>digital<br>experiences.</h1>
+  <div class="meta">
+    <span><strong>Fullstack Engineer</strong> · React · TypeScript · Node.js · PostgreSQL · Flutter</span>
+    <span class="label"><span class="dot"></span>Available</span>
+  </div>
+</body></html>
+<!--
+  Source for public/og.png, the link-preview card. Regenerate after changing
+  the role or the stack line:
+
+  chrome --headless=new --hide-scrollbars --force-device-scale-factor=1 \
+    --window-size=1200,630 --virtual-time-budget=8000 \
+    --screenshot=public/og.png file://$PWD/scripts/og-card.html
+-->

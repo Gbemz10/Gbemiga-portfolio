@@ -18,14 +18,36 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+const siteUrl = "https://gbemigas-potfolio.vercel.app";
+const cardTitle = `${profile.shortName}, ${profile.role}`;
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://gbemiga.dev"),
-  title: `${profile.shortName}, ${profile.role}`,
+  // Relative asset URLs below are resolved against this, so it has to be the
+  // address the site is actually served from or the card image 404s.
+  metadataBase: new URL(siteUrl),
+  title: cardTitle,
   description: `${profile.positioning} ${profile.positioningSub}`,
   openGraph: {
-    title: `${profile.shortName}, ${profile.role}`,
+    title: cardTitle,
     description: profile.positioning,
+    url: siteUrl,
+    siteName: profile.shortName,
     type: "website",
+    locale: "en_GB",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: `${profile.name}, ${profile.role}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: cardTitle,
+    description: profile.positioning,
+    images: ["/og.png"],
   },
   icons: { icon: "/favicon.svg" },
 };
